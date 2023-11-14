@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ex11023</string>
+    <string name="creditsText">All the rights reserved to Ori Roitzaid and Albert Levy.\n\nI also
+        want to thank my parents that brought we to where I am today.</string>
 </resources>
