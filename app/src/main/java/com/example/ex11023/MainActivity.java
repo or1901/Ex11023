@@ -1,13 +1,17 @@
 package com.example.ex11023;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean storageExist, permExist;
     TextView tV;
     EditText eT;
+    Intent si;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -222,5 +227,34 @@ public class MainActivity extends AppCompatActivity {
             save(view);  // Adds the input of the edit text to the file
             finish();
         }
+    }
+
+    /**
+     * This function presents the options menu for moving between activities.
+     * @param menu The options menu in which you place your items.
+     * @return true in order to show the menu, otherwise false.
+     */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    /**
+     * This function reacts to the user choice in the options menu - it moves to the chosen
+     * activity from the menu.
+     * @param item The menu item that was selected.
+     * @return Must return true for the menu to react.
+     */
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        int id = item.getItemId();
+
+        if(id == R.id.menuCredits){
+            si = new Intent(this, CreditsActivity.class);
+            startActivity(si);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }
