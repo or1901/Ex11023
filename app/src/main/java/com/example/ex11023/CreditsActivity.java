@@ -7,6 +7,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ * The credits activity:
+ * shows the credits of the app, and allows to go back to the main activity.
+ * @author Ori Roitzaid <or1901 @ bs.amalnet.k12.il>
+ * @version	1
+ * @since 14/11/2023
+ */
 public class CreditsActivity extends AppCompatActivity {
 
     @Override
